@@ -1,0 +1,32 @@
+v {xschem version=3.4.4 file_version=1.2}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=X1"
+spice_sym_def=".subckt schemgen_dido_amp INP INN OUTP OUTN
+* SchemGen ideal fully differential op-amp: V(OUTP) - V(OUTN) = 1e5 * (V(INP) - V(INN))
+EP OUTP 0 INP INN 5e4
+EN OUTN 0 INN INP 5e4
+.ends schemgen_dido_amp"
+}
+V {}
+S {}
+E {}
+L 4 -80 -20 -50 -20 {}
+L 4 -80 20 -50 20 {}
+L 4 0 -20 80 -20 {}
+L 4 0 20 80 20 {}
+L 4 -50 -40 -50 40 {}
+L 4 -50 -40 50 0 {}
+L 4 -50 40 50 0 {}
+L 4 -45 -20 -35 -20 {}
+L 4 -40 -25 -40 -15 {}
+L 4 -45 20 -35 20 {}
+L 4 55 -30 65 -30 {}
+L 4 60 -35 60 -25 {}
+L 4 55 30 65 30 {}
+B 5 -82.5 -22.5 -77.5 -17.5 {name=INP dir=in}
+B 5 -82.5 17.5 -77.5 22.5 {name=INN dir=in}
+B 5 77.5 -22.5 82.5 -17.5 {name=OUTP dir=out}
+B 5 77.5 17.5 82.5 22.5 {name=OUTN dir=out}
+T {@name} -45 -60 0 0 0.2 0.2 {}
