@@ -1,0 +1,16 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_33_1e04aa94c848/schematic
+// User-scoped topology reference only; no device values or simulation model.
+// 2026-11-05: the four dual-gate MOSFETs U1-U4 (nmos_dualgate_enh, D G1 G2 S) are
+// represented as ordinary 4-terminal NMOS (D G S B): G1 and G2 shorted into one gate
+// net, body tied to source as drawn. M1 and M2 are likewise 4-terminal NMOS with body
+// tied to source (ground). Original kept in outputs/golden_backups_20261105/.
+I1 ( IREF_TOP IBIAS ) isource
+M1 ( IBIAS IBIAS 0 0 ) nmos1v
+M2 ( TAIL IBIAS 0 0 ) nmos1v
+Rs1 ( LEFT_S TAIL ) resistor
+Rs2 ( RIGHT_S TAIL ) resistor
+U1 ( LEFT_D BIAS_G VDD VDD ) nmos1v
+U2 ( RIGHT_D BIAS_G VDD VDD ) nmos1v
+U3 ( LEFT_D VinP LEFT_S LEFT_S ) nmos1v
+U4 ( RIGHT_D VinN RIGHT_S RIGHT_S ) nmos1v

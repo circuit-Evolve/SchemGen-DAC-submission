@@ -1,0 +1,39 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p04_fig4_gilbert_cell
+// Original comments below describe the pre-conversion topology:
+// original: Manually repaired from the image. Explicit D G S B for all six NMOS.
+// original: Every small body lead loops to that device's own source, not a floating net.
+// original: The top RF crossover bridges do not join the IF drain rails.
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c38_e90930e091
+// View name: schematic
+M6 (RF_M LO_P RIGHT RIGHT) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M5 (RF_P LO_M RIGHT RIGHT) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M4 (RF_M LO_M LEFT LEFT) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M3 (RF_P LO_P LEFT LEFT) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M2 (RIGHT IF_M TAIL TAIL) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M1 (LEFT IF_P TAIL TAIL) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+R4 (VDD RF_M) resistor r=1K
+R3 (VDD RIGHT) resistor r=1K
+R2 (VDD LEFT) resistor r=1K
+R1 (VDD RF_P) resistor r=1K
+IDC (TAIL 0) isource dc=0 type=dc

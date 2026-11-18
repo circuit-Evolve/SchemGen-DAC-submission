@@ -1,0 +1,23 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_82_b82f5c965ad8/schematic
+CC1 ( RC1MID Von_DSL ) capacitor
+CC2 ( RC2MID Vop_DSL ) capacitor
+Ncm_out ( CMFBD CMFBD 0 ) nmos1v_3
+Ncm_ref ( CMREF CMREF 0 ) nmos1v_3
+Nload_n ( X CMFBD 0 ) nmos1v_3
+Nload_p ( Y CMFBD 0 ) nmos1v_3
+Nout_n ( Von_DSL X 0 ) nmos1v_3
+Nout_p ( Vop_DSL Y 0 ) nmos1v_3
+Pcm_ref1 ( CMREF VCM TAIL1 ) pmos1v_3
+Pcm_ref2 ( CMREF VCM TAIL2 ) pmos1v_3
+Pcm_tail1 ( TAIL1 VBD VDD ) pmos1v_3
+Pcm_tail2 ( TAIL2 VBD VDD ) pmos1v_3
+Pcm_von ( CMFBD Von_DSL TAIL2 ) pmos1v_3
+Pcm_vop ( CMFBD Vop_DSL TAIL1 ) pmos1v_3
+Pin_n ( X Vin_n_DSL TAIL0 ) pmos1v_3
+Pin_p ( Y Vin_p_DSL TAIL0 ) pmos1v_3
+Pout_n ( Von_DSL VBD VDD ) pmos1v_3
+Pout_p ( Vop_DSL VBD VDD ) pmos1v_3
+Ptail ( TAIL0 VBD VDD ) pmos1v_3
+RC1 ( X RC1MID ) resistor
+RC2 ( Y RC2MID ) resistor

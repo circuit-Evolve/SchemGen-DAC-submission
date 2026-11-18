@@ -1,0 +1,30 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p03_self_cascode_dtmos
+// Original comments below describe the pre-conversion topology:
+// original: Manually repaired from the image. Explicit MOS order D G S B.
+// original: M1 body joins M2 source / resistor top, not M1 source or gate.
+// original: M2 and M3 bodies each join their own source, as the loops show.
+// original: VG is a DC battery symbol; it is NOT a capacitor.
+// original: Gate wire crosses the VDD/M1-drain wire without a junction dot.
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c29_b62c0f2cb5
+// View name: schematic
+M3 (VDD GIN MID MID) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M2 (MID GIN RBODY RBODY) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M1 (VDD GIN 0 RBODY) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+R (RBODY 0) resistor r=1K
+VG_SRC (VG 0) vsource dc=0 type=dc
+VIN (GIN VG) vsource dc=0 type=dc

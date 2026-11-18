@@ -1,0 +1,12 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_48_e8ab56d22aae/schematic
+IB ( VDD IBIAS ) isource
+M1 ( A GREF VDD Y ) pmos1v
+M2 ( GREF GREF VDD X ) pmos1v
+M3 ( X A VDD X ) pmos1v
+M4 ( Z A VDD X ) pmos1v
+M5 ( IBIAS IBIAS 0 0 ) nmos1v
+M6 ( A IBIAS 0 0 ) nmos1v
+M7 ( GREF IBIAS 0 0 ) nmos1v
+M8 ( X IBIAS 0 0 ) nmos1v
+M9 ( Z IBIAS 0 0 ) nmos1v

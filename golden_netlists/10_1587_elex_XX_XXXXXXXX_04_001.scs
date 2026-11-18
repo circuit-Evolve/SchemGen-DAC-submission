@@ -1,0 +1,7 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GraphReworkLib/gc_d98b15d9ba05_3ff4ca40/schematic
+dev_current_4 ( net1 0 ) isource
+dev_nmos_1 ( net5 net3 net4 ) nmos1v_3
+dev_pmos_0 ( net1 net1 net5 ) pmos1v_3
+dev_pmos_2 ( 0 net2 net3 ) pmos1v_3
+dev_pmos_3 ( net3 net1 vdd! ) pmos1v_3

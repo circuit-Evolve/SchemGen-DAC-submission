@@ -1,0 +1,24 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=SchemGenLib_gpdk045/final_combined_matched_schematics_refined__no_doi_133_001_final__ad6f93d644/schematic
+C1 ( net1 0 ) capacitor
+Cby1 ( 0 VG1 ) capacitor
+Cby2 ( VD1 0 ) capacitor
+Cby3 ( VG2 0 ) capacitor
+Cf ( net3 net2 ) capacitor
+Cout ( net10 net11 ) capacitor
+L1 ( net1 Vin ) inductor
+L2 ( net2 net1 ) inductor
+L3 ( VG1 net2 ) inductor
+L4 ( net9 VD1 ) inductor
+L5 ( net5 VG2 ) inductor
+Ld ( net6 net11 ) inductor
+Lf ( net4 net11 ) inductor
+Lout ( Vout net10 ) inductor
+Ls ( 0 net8 ) inductor
+M1 ( net7 net2 net8 ) nmos1v_3
+M2 ( net6 net5 net7 ) nmos1v_3
+RF ( net3 net4 ) resistor
+RL ( 0 Vout ) resistor
+Rd ( net11 net9 ) resistor
+VDD_SRC ( VD1 0 ) vsource schemgen_role=synthetic_supply
+Vin_SRC ( Vin 0 ) vsource

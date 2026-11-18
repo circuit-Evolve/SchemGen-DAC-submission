@@ -1,0 +1,17 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1109_ACCESS_2021_3098895_06_002.json
+capacitor_10_0 ( c RFin ) capacitor
+capacitor_11_1 ( d RFin ) capacitor
+capacitor_12_2 ( 0 h ) capacitor
+capacitor_13_3 ( e a ) capacitor
+capacitor_14_4 ( e 0 ) capacitor
+capacitor_8_5 ( g RFin ) capacitor
+capacitor_9_6 ( 0 b ) capacitor
+nmos_0_7 ( b b d ) nmos1v_3
+nmos_1_8 ( c c a ) nmos1v_3
+nmos_2_9 ( h h c ) nmos1v_3
+nmos_3_10 ( d d h ) nmos1v_3
+nmos_4_11 ( g g b ) nmos1v_3
+nmos_6_12 ( g 0 0 ) nmos1v_3
+resistor2_5_13 ( e a ) resistor

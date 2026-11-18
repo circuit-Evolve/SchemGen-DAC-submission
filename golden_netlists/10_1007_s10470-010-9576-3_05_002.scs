@@ -1,0 +1,9 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_12_5204c854d493/schematic
+M1 ( VA VB VDD ) pmos1v_3
+M2 ( 0 VIN VA VA ) pmos1v
+M3 ( BOOT IP1 VA ) pmos1v_3
+M4 ( BOOT IP1 0 ) nmos1v_3
+M5 ( VIN P1 BODY ) nmos1v_3
+M6 ( BODY IP1 0 ) nmos1v_3
+Ms ( VOUT BOOT VIN BODY ) nmos1v

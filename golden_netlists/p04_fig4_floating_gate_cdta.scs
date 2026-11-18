@@ -1,0 +1,100 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p04_fig4_floating_gate_cdta
+// Original comments below describe the pre-conversion topology:
+// original: Manually traced from batch1/images/p04_fig4_floating_gate_cdta.png, 2026-10-01.
+// original: Topology-only golden netlist; not a Cadence export or simulation deck.
+// original: MOS pin order: D G S. Source image does not draw independent body leads.
+// original: Current-source pin order: current flows from first to second terminal.
+// original: User confirmed the continuous M15-M20 gate bus and both N labels joined.
+// original: PB2 therefore joins both M13/M14 drains. This is intentional image matching.
+// original: The two floating-gate nodes are represented explicitly with C1-C4.
+// original: Ground 0 and the lower VSS supply are different nets.
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c37_1dc9a4f4da
+// View name: schematic
+M24 (IOUT_PLUS NB2 VSS VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M23 (NB2 NB2 VSS VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M22 (NB3 NB3 VSS VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M21 (IOUT_MINUS NB3 VSS VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M14 (PB2 0 TAIL VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M13 (PB2 N TAIL VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M12 (N N LOWER VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M9 (LOWER NB1 VSS VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M7 (NB1 NB1 VSS VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M5 (UPPER FG1 P VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M3 (PB1 FG1 N VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M1 (BIAS1 FG1 0 VSS) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M20 (IOUT_PLUS PB2 VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M19 (NB3 PB2 VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M18 (PB2 PB2 VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M17 (NB2 PB2 VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M16 (IOUT_MINUS PB2 VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M15 (PB2 PB2 VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M11 (N N UPPER VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M10 (UPPER PB1 VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M8 (PB1 PB1 VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M6 (LOWER FG2 P VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M4 (NB1 FG2 N VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M2 (BIAS2 FG2 0 VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+C4 (FG2 VB2) capacitor c=1p
+C3 (FG1 VB1) capacitor c=1p
+C2 (BIAS2 FG2) capacitor c=1p
+C1 (BIAS1 FG1) capacitor c=1p
+IB3 (TAIL VSS) isource dc=0 type=dc
+IB2 (BIAS2 VSS) isource dc=0 type=dc
+IB1 (VDD BIAS1) isource dc=0 type=dc

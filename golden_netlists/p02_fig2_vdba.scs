@@ -1,0 +1,75 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p02_fig2_vdba
+// Original comments below describe the pre-conversion topology:
+// original: SchemGen Cadence OA topology netlist for GED only
+// original: SCHEMGEN_OA_TARGET=GraphReworkLib/gc_d5feb3e908c3_106274c1/schematic
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c11_3c628d0e50
+// View name: schematic
+dev_nmos_9 (net15 net5 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_7 (net13 net14 net7 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_6 (net7 net12 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_5 (net1 net11 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_3 (net8 net9 net7 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_2 (net6 net10 net4 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_15 (net4 net5 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_13 (net10 net3 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_11 (net11 net11 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_10 (net2 net15 net4 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_1 (net3 net3 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_cross_20 (net3 net13 vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_cross_0 (net11 net8 vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_8 (net8 net8 vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_4 (net6 net2 vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_18 (net1 net13 vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_17 (net15 net6 vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_16 (net10 net8 vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_14 (net13 net13 vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_12 (net2 net2 vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)

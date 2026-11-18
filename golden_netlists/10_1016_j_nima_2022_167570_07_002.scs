@@ -1,0 +1,11 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1016_j_nima_2022_167570_07_002.json
+capacitor_12_0 ( IN OUT ) capacitor
+npn_2_1 ( c Ib2 floating_resistor2_3_Pos ) npn
+npn_4_2 ( b IN 0 ) npn
+npn_6_3 ( VDD b OUT ) npn
+pmos_1_4 ( b Ib1 VDD ) pmos1v_3
+resistor2_0_5 ( c IN ) resistor
+resistor2_3_6 ( floating_resistor2_3_Pos 0 ) resistor
+resistor2_5_7 ( OUT c ) resistor

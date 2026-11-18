@@ -1,0 +1,32 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_30_3697748457f1/schematic
+Cc ( Output INR ) capacitor
+N0L ( INL NB0 VSS VSS ) nmos1v
+N0R ( INR NB0 VSS VSS ) nmos1v
+N0half_L ( P16N BIASI VSS VSS ) nmos1v
+N0half_far ( PREF1 NB0 VSS VSS ) nmos1v
+N0half_final ( NB0 NB0 VSS VSS ) nmos1v
+N0half_mid ( PB8 BIASI VSS VSS ) nmos1v
+N0half_ref ( BIASI BIASI VSS VSS ) nmos1v
+N0half_right ( NB2LOW NB0 VSS VSS ) nmos1v
+N1L ( REF17 NB2 INL INL ) nmos1v
+N1R ( OPEN_S1R_D NB2 INR INR ) nmos1v
+N2 ( NB2 NB2 NB2LOW NB2LOW ) nmos1v
+N3 ( AMP1 NB5 AMP2 AMP2 ) nmos1v
+N4 ( NB4 NB4 VSS VSS ) nmos1v
+N5 ( NB5 NB5 NB4 NB4 ) nmos1v
+P10L ( INL Vin_minus TAIL TAIL ) pmos1v
+P10R ( INR Vin_plus TAIL TAIL ) pmos1v
+P11 ( P11N PREF1 VDD VDD ) pmos1v
+P12 ( NB2 NB2 P11N P11N ) pmos1v
+P13 ( TAIL PREF1 VDD VDD ) pmos1v
+P14 ( AMP2 BIASI AMP1 AMP1 ) pmos1v
+P15 ( P15N P15N VDD VDD ) pmos1v
+P16 ( P16N P16N P15N P15N ) pmos1v
+P17L ( REF17 REF17 VDD VDD ) pmos1v
+P17R ( AMP1 REF17 VDD VDD ) pmos1v
+P6 ( VSS AMP2 Output Output ) pmos1v
+P7 ( NB5 PB8 VDD VDD ) pmos1v
+P8L ( PB8 PB8 VDD VDD ) pmos1v
+P8R ( PREF1 PREF1 VDD VDD ) pmos1v
+P9 ( Output AMP1 VDD VDD ) pmos1v

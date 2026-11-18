@@ -1,0 +1,8 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1109_ACCESS_2021_3072595_02_002.json
+nmos_1_0 ( a VBN 0 ) nmos1v_3
+nmos_3_1 ( VOUT VIM a ) nmos1v_3
+nmos_4_2 ( d VIP a ) nmos1v_3
+pmos_0_3 ( VOUT d h ) pmos1v_3
+pmos_2_4 ( d d e ) pmos1v_3

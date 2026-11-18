@@ -1,0 +1,47 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p02_fig4_conventional
+// Original comments below describe the pre-conversion topology:
+// original: Image-reviewed topology netlist; not a simulation deck.
+// original: Source image: p02_fig4_conventional.png
+// original: SOURCE_OA_TARGET=GraphReworkLib/gc_95df4be4e66b_0674e635/schematic
+// original: Source OA cell is provenance only; its schematic was NOT modified.
+// original: Review record: ../../batch1_review_saved17_20261001/review_record.txt
+// original: MOS pin order D G S [B]; BJT C B E; current-source PLUS MINUS.
+// original: Added missing bodies to M3/M4/M6 (VDD) and M5/M8 (ground). All eight MOSFETs are now four-terminal. Joined tail and bias as the user confirmed; M1/M2 bodies remain connected to that common source node. This unusual tail/bias connection is intentional image matching, not a claim of good amplifier performance.
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c13_cbda6e4edd
+// View name: schematic
+M7 (OUT TAIL_BIAS 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M8 (TAIL_BIAS TAIL_BIAS 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M5 (TAIL_BIAS TAIL_BIAS 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M2 (NI VINP TAIL_BIAS TAIL_BIAS) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M1 (NL VINM TAIL_BIAS TAIL_BIAS) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M6 (OUT NI VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M4 (NI NL VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M3 (NL NL VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+CL (OUT 0) capacitor c=1p
+CC (NI OUT) capacitor c=1p
+Ibias (VDD TAIL_BIAS) isource dc=0 type=dc

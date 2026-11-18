@@ -1,0 +1,10 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_64_c2510ae984b6/schematic
+C1 ( B A ) capacitor
+C2 ( 0 OUT ) capacitor
+C3 ( OUT B ) capacitor
+C4 ( C 0 ) capacitor
+L1 ( VIN A ) inductor
+L2 ( 0 B ) inductor
+L3 ( C OUT ) inductor
+Vdc ( VIN 0 ) vsource

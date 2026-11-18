@@ -1,0 +1,16 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_69_29d97c2904e1/schematic
+C1 ( Vinn INN_NODE ) capacitor
+C2 ( INP_NODE Vinp ) capacitor
+C3 ( VDD Voutn ) capacitor
+C4 ( Voutp 0 ) capacitor
+Iref ( VDD VBN ) isource
+M1 ( Voutn VBN INN_NODE ) nmos1v_3
+M2 ( Voutn VBN INP_NODE ) nmos1v_3
+M3 ( Voutp VBP INN_NODE ) pmos1v_3
+M4 ( Voutp VBP INP_NODE ) pmos1v_3
+M5 ( VBN VBN BIAS_MID ) nmos1v_3
+M6 ( VBP VBP BIAS_MID ) pmos1v_3
+R1 ( VBP 0 ) resistor
+R2 ( VDD Voutn ) resistor
+R3 ( Voutp 0 ) resistor

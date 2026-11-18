@@ -1,0 +1,15 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1109_ACCESS_2020_2989192_09_002.json
+nmos_11_0 ( Voutn Vinp f ) nmos1v_3
+nmos_5_1 ( f VBIAS 0 ) nmos1v_3
+nmos_8_2 ( Voutp Vinn f ) nmos1v_3
+nmos_cross_0_3 ( h Vinp f ) nmos1v_3
+nmos_cross_2_4 ( d Vinn f ) nmos1v_3
+pmos_10_5 ( e VBIAS VDD ) pmos1v_3
+pmos_4_6 ( Voutp Vinn e ) pmos1v_3
+pmos_9_7 ( Voutn Vinp e ) pmos1v_3
+pmos_cross_1_8 ( h Vinp e ) pmos1v_3
+pmos_cross_3_9 ( d Vinn e ) pmos1v_3
+resistor2_6_10 ( VBIAS d ) resistor
+resistor2_7_11 ( VBIAS h ) resistor

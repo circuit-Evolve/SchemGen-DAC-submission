@@ -1,0 +1,11 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GraphReworkLib/gc_87dac619e15b_6fd674a7/schematic
+// Corrected 2026-10-22 from the image: the TP2/TP3 gate diagonals cross without a dot,
+// so Out_N and Out_P are separate nets and TP2/TP3 are cross-coupled, not diode-connected.
+// The original merged both outputs into Out_P (backup: ../Final-Locked-Dataset-SchemGen_backup_before_diagonal_fix/).
+dev_nmos_0 ( Out_N net2 0 ) nmos1v_3
+dev_nmos_1 ( Out_P net4 0 ) nmos1v_3
+dev_pmos_2 ( Out_N net2 vdd! ) pmos1v_3
+dev_pmos_3 ( Out_P net4 vdd! ) pmos1v_3
+dev_pmos_4 ( Out_N Out_P V ) pmos1v_3
+dev_pmos_6 ( Out_P Out_N V ) pmos1v_3

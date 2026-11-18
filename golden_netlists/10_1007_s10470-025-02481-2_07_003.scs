@@ -1,0 +1,23 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1007_s10470-025-02481-2_07_003.json
+current_14_0 ( VDD j ) isource
+current_2_1 ( VDD n ) isource
+current_5_2 ( VDD l ) isource
+nmos_10_3 ( d l k ) nmos1v_3
+nmos_12_4 ( n n a ) nmos1v_3
+nmos_15_5 ( l l f ) nmos1v_3
+nmos_17_6 ( j m a ) nmos1v_3
+nmos_18_7 ( a j 0 ) nmos1v_3
+nmos_3_8 ( h n 0 ) nmos1v_3
+nmos_4_9 ( k f 0 ) nmos1v_3
+nmos_6_10 ( m m 0 ) nmos1v_3
+nmos_8_11 ( f f 0 ) nmos1v_3
+pmos_0_12 ( Iout h e ) pmos1v_3
+pmos_1_13 ( h h c ) pmos1v_3
+pmos_11_14 ( b g VDD ) pmos1v_3
+pmos_13_15 ( c c VDD ) pmos1v_3
+pmos_16_16 ( e c VDD ) pmos1v_3
+pmos_19_17 ( g g VDD ) pmos1v_3
+pmos_7_18 ( m d b ) pmos1v_3
+pmos_9_19 ( d d g ) pmos1v_3

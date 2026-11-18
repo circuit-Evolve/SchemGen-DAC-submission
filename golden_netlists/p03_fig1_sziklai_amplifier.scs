@@ -1,0 +1,36 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p03_fig1_sziklai_amplifier
+// Original comments below describe the pre-conversion topology:
+// original: Manually traced from batch2/images/p03_fig1_sziklai_amplifier.png.
+// original: Topology reference, not a Cadence export or simulation-qualified deck.
+// original: Numeric node names 0..7 are the node numbers printed in the image.
+// original: Node 4 is the external +18 V VCC rail; node 6 is VOUT; node 0 is ground.
+// original: No extra supply-source device has been inserted into the reference graph.
+// original: QP and QN terminals are ordered Collector, Base, Emitter (C B E).
+// original: Both devices are three-terminal BJTs, not MOSFETs. No body pin is drawn.
+// original: 'pnp' and 'npn' are polarity/model placeholders. Actual BJT model cards
+// original: and a VCC testbench supply are required before numerical simulation.
+// original: VIN is marked 1 kHz / 10 mV. The image does not specify peak versus RMS;
+// original: ampl=10m below uses the peak convention and is not a verified RMS claim.
+// original: The pinned Cadence importer and GED adapter do not support PNP. Do not
+// original: silently drop QP or reinterpret it as a MOSFET/current source for GED.
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c18_e4b9ffeb71
+// View name: schematic
+RL (_6 0) resistor r=85
+RP (_7 0) resistor r=4.2k
+RE (_4 _5) resistor r=1
+R2 (_3 0) resistor r=250k
+R1 (_4 _3) resistor r=80k
+Rs (_1 _2) resistor r=1
+VIN (_1 0) vsource dc=0 type=sine freq=1k ampl=10m
+C1 (_2 _3) capacitor c=100n
+QP (_7 _3 _5 ) g45vpnp10 area=100.0 m=1
+QN (_5 _7 _6 ) g45vnpn10 area=100.0 m=1

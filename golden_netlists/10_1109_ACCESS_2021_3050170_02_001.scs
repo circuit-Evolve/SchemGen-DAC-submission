@@ -1,0 +1,17 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=AgnibhaRepair_20260924/repair_09_ccbbd706caaf/schematic
+C1 ( N1 CLK1 ) capacitor
+C2 ( CLK2 N2 ) capacitor
+C3 ( N3 CLK1 ) capacitor
+C4 ( CLK2 N4 ) capacitor
+CL ( Vout 0 ) capacitor
+CS1 ( N1 0 ) capacitor
+CS2 ( N2 0 ) capacitor
+CS3 ( N3 0 ) capacitor
+CS4 ( N4 0 ) capacitor
+D1 ( Vin N1 ) diode
+D2 ( N1 N2 ) diode
+D3 ( N2 N3 ) diode
+D4 ( N3 N4 ) diode
+D5 ( N4 Vout ) diode
+RL ( Vout 0 ) resistor

@@ -1,0 +1,12 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_25_37a0fcc5a331/schematic
+C1 ( VIN B ) capacitor
+C2 ( A SW ) capacitor
+Cf ( VOUT 0 ) capacitor
+D ( SW VOUT ) diode
+D1 ( A B ) diode
+L1 ( VIN A ) inductor
+L2 ( B SW ) inductor
+RL ( VOUT 0 ) resistor
+S ( SW GATE 0 ) nmos1v_3
+Vin ( VIN 0 ) vsource

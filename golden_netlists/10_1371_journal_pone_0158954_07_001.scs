@@ -1,0 +1,14 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=SchemGenLib_gpdk045/005_LC_backup_20260830_122012_refined__10_1371_journal_pone_0158954_07_001_final__fe8c0fe2c3/schematic
+VDD_SRC ( VDD 0 ) vsource schemgen_role=synthetic_supply
+nmos_13 ( d Vin 0 ) nmos1v_3
+nmos_9 ( Vout a d ) nmos1v_3
+nmos_bulk_10 ( a b 0 ) nmos1v_3
+nmos_bulk_2 ( c c Vin ) nmos1v_3
+nmos_bulk_8 ( b b 0 ) nmos1v_3
+pmos_bulk_11 ( Vout a h ) pmos1v_3
+pmos_bulk_4 ( c c Vout ) pmos1v_3
+pmos_bulk_5 ( h f VDD ) pmos1v_3
+pmos_bulk_6 ( f f VDD ) pmos1v_3
+resistor2_0 ( b VDD ) resistor
+resistor2_1 ( a f ) resistor

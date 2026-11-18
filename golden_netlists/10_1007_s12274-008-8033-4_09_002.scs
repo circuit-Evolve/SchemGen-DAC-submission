@@ -1,0 +1,7 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1007_s12274-008-8033-4_09_002.json
+nmos_2_0 ( b b Vout ) nmos1v_3
+nmos_3_1 ( Vout c 0 ) nmos1v_3
+voltage_0_2 ( c 0 ) vsource
+voltage_1_3 ( b 0 ) vsource

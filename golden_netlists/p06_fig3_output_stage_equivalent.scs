@@ -1,0 +1,58 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p06_fig3_output_stage_equivalent
+// Original comments below describe the pre-conversion topology:
+// original: Manually traced from batch1/images/p06_fig3_output_stage_equivalent.png.
+// original: Topology-only golden netlist, 2026-10-01. Not a native Cadence export.
+// original: MOS pin order D G S. No independent body leads are drawn.
+// original: User confirmed M19 gate is grounded and the two V1 points stay separate.
+// original: M19 is represented as NMOS: source at VI, drain at M5 gate.
+// original: Undotted VII/VB2 and VII/VI crossings are not electrical junctions.
+// original: ReqL = R14 || rds4a; ReqR = R13 || rds3a.
+// original: IeqL points to ground and represents Vin1*F - Vin2*G.
+// original: IeqR points to ground and represents Vin2*N - Vin1*M.
+// original: These two expressions are descriptive only: no behavioural simulation model
+// original: or transistor dimensions are supplied by this topology netlist.
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c57_50ed2c251d
+// View name: schematic
+M20 (VI V1_GATE VII VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M10 (VOUT VB2 PR VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M9 (VII VB2 PL VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M12 (PR VII VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M11 (PL VII VDD VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M19 (M5_GATE 0 VI 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M6 (NR VI 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M5 (V1_SENSE M5_GATE 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M8 (VOUT VII NR 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M7 (VI VII V1_SENSE 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+ReqR (NR 0) resistor r=1K
+ReqL (V1_SENSE 0) resistor r=1K
+IeqR (NR 0) isource dc=0 type=dc
+IeqL (V1_SENSE 0) isource dc=0 type=dc

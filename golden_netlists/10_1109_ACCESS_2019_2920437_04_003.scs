@@ -1,0 +1,8 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_58_4336e479e1fc/schematic
+MN0 ( VDD RST LOW ) nmos1v_3
+MN1 ( RST RST_IN LOW ) nmos1v_3
+MN2 ( LOW RST_IN 0 ) nmos1v_3
+MP0 ( 0 RST UP ) pmos1v_3
+MP1 ( UP RST_IN VDD ) pmos1v_3
+MP2 ( RST RST_IN UP ) pmos1v_3

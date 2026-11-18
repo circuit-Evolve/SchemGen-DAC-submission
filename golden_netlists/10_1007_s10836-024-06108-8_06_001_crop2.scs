@@ -1,0 +1,21 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_22_6c0f4f52a2b8/schematic
+Ncross_l ( Outb Out A ) nmos1v_3
+Ncross_r ( Out Outb B ) nmos1v_3
+Ndis_l ( A CTRL_L 0 ) nmos1v_3
+Ndis_r ( B CTRL_R 0 ) nmos1v_3
+Nin ( PRE_L Input TAIL ) nmos1v_3
+Ninv_l ( CTRL_L PRE_L 0 ) nmos1v_3
+Ninv_r ( CTRL_R PRE_R 0 ) nmos1v_3
+Nread ( TAIL Read 0 ) nmos1v_3
+Nref ( PRE_R REF TAIL ) nmos1v_3
+Pcross_l ( Outb Out VDD ) pmos1v_3
+Pcross_r ( Out Outb VDD ) pmos1v_3
+Pinv_l ( CTRL_L PRE_L VDD ) pmos1v_3
+Pinv_r ( CTRL_R PRE_R VDD ) pmos1v_3
+Platch_l ( Outb CTRL_L VDD ) pmos1v_3
+Platch_r ( Out CTRL_R VDD ) pmos1v_3
+Ppre_l ( A CTRL_L VDD ) pmos1v_3
+Ppre_r ( B CTRL_R VDD ) pmos1v_3
+Pread_l ( PRE_L Read VDD ) pmos1v_3
+Pread_r ( PRE_R Read VDD ) pmos1v_3

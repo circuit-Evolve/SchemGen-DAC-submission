@@ -1,0 +1,20 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_52_fb5c6d989027/schematic
+Cc ( P COMP ) capacitor
+Cvco ( X 0 ) capacitor
+Iss ( TAIL 0 ) isource
+Ivco ( X 0 ) isource
+M0 ( X P VDD ) pmos1v_3
+M1 ( A VREF TAIL ) nmos1v_3
+M2 ( B S TAIL ) nmos1v_3
+M3 ( A CM VDD ) pmos1v_3
+M4 ( B CM VDD ) pmos1v_3
+M5 ( BIAS A VDD ) pmos1v_3
+M6 ( P B VDD ) pmos1v_3
+M7 ( BIAS BIAS 0 ) nmos1v_3
+M8 ( P BIAS 0 ) nmos1v_3
+R1 ( X S ) resistor
+R2 ( S 0 ) resistor
+Ra ( A CM ) resistor
+Rb ( CM B ) resistor
+Rc ( COMP X ) resistor

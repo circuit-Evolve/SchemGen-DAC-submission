@@ -1,0 +1,42 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p03_fig4_current_reuse_lna
+// Original comments below describe the pre-conversion topology:
+// original: Image-traced topology reference; three-terminal NMOS devices D G S.
+// original: Cco connects G3 to D2, NOT ground. Cd connects S3 to ground.
+// original: Visible dimensions/values retained; Cin's value is not given.
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c25_84eb56ad49
+// View name: schematic
+NM4 (D4 G4 D3 0) g45n1svt w=(10u) l=180n nf=1 as=1.4p ad=1.4p ps=20.28u \
+        pd=20.28u nrd=14m nrs=14m sa=140n sb=140n sd=160n sca=29.62924 \
+        scb=0.03494 scc=0.00276 m=(100)
+NM3 (D3 G3 S3 0) g45n1svt w=(10u) l=180n nf=1 as=1.4p ad=1.4p ps=20.28u \
+        pd=20.28u nrd=14m nrs=14m sa=140n sb=140n sd=160n sca=29.62924 \
+        scb=0.03494 scc=0.00276 m=(100)
+NM2 (D2 G2 D1 0) g45n1svt w=(10u) l=180n nf=1 as=1.4p ad=1.4p ps=20.28u \
+        pd=20.28u nrd=14m nrs=14m sa=140n sb=140n sd=160n sca=29.62924 \
+        scb=0.03494 scc=0.00276 m=(100)
+NM1 (D1 G1 S1 0) g45n1svt w=(10u) l=180n nf=1 as=1.4p ad=1.4p ps=20.28u \
+        pd=20.28u nrd=14m nrs=14m sa=140n sb=140n sd=160n sca=29.62924 \
+        scb=0.03494 scc=0.00276 m=(100)
+R4 (VBB4 G4) resistor r=1k
+R3 (VBB3 G3) resistor r=1k
+R2 (VBB2 G2) resistor r=1k
+R1 (VBB1 G1) resistor r=20k
+LD2 (VDD D4) inductor l=14.3n
+LD1 (S3 D2) inductor l=14.3n
+LS (S1 0) inductor l=576p
+LG (LCIN G1) inductor l=22.4n
+Cout (D4 VOUT) capacitor c=1.1p
+Cd (S3 0) capacitor c=20p
+Cco (G3 D2) capacitor c=10p
+C2 (G4 0) capacitor c=10p
+C1 (G2 0) capacitor c=10p
+Cin (VIN LCIN) capacitor c=1p

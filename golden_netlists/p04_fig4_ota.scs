@@ -1,0 +1,52 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p04_fig4_ota
+// Original comments below describe the pre-conversion topology:
+// original: SchemGen Cadence OA topology netlist for GED only
+// original: SCHEMGEN_OA_TARGET=GraphReworkLib/gc_cfebc16122a2_b786ff79/schematic
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c40_f5f1ee25f6
+// View name: schematic
+dev_nmos_6 (net9 net9 net8 PDK_BULK_N) g45n1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_5 (net1 net1 net8 PDK_BULK_N) g45n1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_16 (net6 net10 net9 PDK_BULK_N) g45n1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_1 (net9 net9 net8 PDK_BULK_N) g45n1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_0 (net7 net9 net8 PDK_BULK_N) g45n1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_9 (net9 net5 net3 PDK_BULK_P) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_8 (net1 net1 net2 PDK_BULK_P) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_7 (net7 net2 net10 PDK_BULK_P) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_4 (net3 net2 net10 PDK_BULK_P) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_3 (net9 net4 net3 PDK_BULK_P) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_pmos_2 (net2 net2 net10 PDK_BULK_P) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_nmos_15 (net6 net8 net9 PDK_BULK_P) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+dev_resistor2_17 (net7 net6) capacitor c=1p

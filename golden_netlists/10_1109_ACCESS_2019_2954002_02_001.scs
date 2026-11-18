@@ -1,0 +1,19 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_62_265b3d75963b/schematic
+Cc ( STAGE1 STAGE2 ) capacitor
+M0 ( TAIL PB VDD ) pmos1v_3
+M1 ( MIRROR V2 TAIL ) pmos1v_3
+M10 ( CLASS CLASS LOW ) nmos1v_3
+M11 ( CLASS CLASS HIGH ) pmos1v_3
+M12 ( HIGH STAGE2 VDD ) pmos1v_3
+M13 ( VOUT CLASS 0 ) nmos1v_3
+M14 ( VOUT CLASS VDD ) pmos1v_3
+M2 ( STAGE1 V1 TAIL ) pmos1v_3
+M3 ( STAGE1 MIRROR 0 ) nmos1v_3
+M4 ( MIRROR MIRROR 0 ) nmos1v_3
+M5 ( NB NB 0 ) nmos1v_3
+M6 ( PB PB VDD ) pmos1v_3
+M7 ( STAGE2 STAGE1 0 ) nmos1v_3
+M8 ( STAGE2 PB VDD ) pmos1v_3
+M9 ( LOW NB 0 ) nmos1v_3
+Rref ( PB NB ) resistor

@@ -1,0 +1,10 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=AgnibhaRepair_20260924/repair_04_887c14836ddf/schematic
+MN1 ( Iin2 Iin2 NBIAS ) nmos1v_3
+MN2 ( Vout Iin2 NBR ) nmos1v_3
+MN3 ( NBIAS NBIAS VSS ) nmos1v_3
+MN4 ( NBR NBIAS VSS ) nmos1v_3
+MP1 ( Iin1 Iin1 PBIAS ) pmos1v_3
+MP2 ( Vout Iin1 PBR ) pmos1v_3
+MP3 ( PBIAS PBIAS VDD ) pmos1v_3
+MP4 ( PBR PBIAS VDD ) pmos1v_3

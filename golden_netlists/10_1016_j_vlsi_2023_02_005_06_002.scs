@@ -1,0 +1,18 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=AgnibhaRepair_20260924/repair_06_4b715a1b7abf/schematic
+C ( V1 Vo ) capacitor
+IIN ( VSS V1 ) isource
+IREF ( BIAS VSS ) isource
+M1 ( NLEFT Vo TAIL1 ) pmos1v_3
+M10 ( Vo Vbias TAIL2 ) pmos1v_3
+M11 ( NRIGHT NRIGHT VSS ) nmos1v_3
+M12 ( Vo NRIGHT VSS ) nmos1v_3
+M13 ( Vo Vo VSS ) nmos1v_3
+M2 ( V1 V1 TAIL1 ) pmos1v_3
+M3 ( NLEFT NLEFT VSS ) nmos1v_3
+M4 ( V1 NLEFT VSS ) nmos1v_3
+M5 ( BIAS BIAS VDD ) pmos1v_3
+M6 ( TAIL1 BIAS VDD ) pmos1v_3
+M7 ( TAIL2 BIAS VDD ) pmos1v_3
+M8 ( Vo BIAS VDD ) pmos1v_3
+M9 ( NRIGHT V1 TAIL2 ) pmos1v_3

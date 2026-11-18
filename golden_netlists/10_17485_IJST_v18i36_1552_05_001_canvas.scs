@@ -1,0 +1,20 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GraphReworkLib/gc_0a8b3f12868e_6eb5787c/schematic
+dev_capacitor_22 ( net10 0 ) capacitor
+dev_capacitor_26 ( net12 0 ) capacitor
+dev_current_0 ( net6 net2 ) isource
+dev_current_1 ( net9 net4 ) isource
+dev_nmos_10 ( net5 net7 net6 ) nmos1v_3
+dev_nmos_2 ( net8 net7 net6 ) nmos1v_3
+dev_nmos_3 ( net9 net9 net7 ) nmos1v_3
+dev_nmos_5 ( net1 net3 net2 ) nmos1v_3
+dev_nmos_6 ( net8 net9 0 ) nmos1v_3
+dev_nmos_7 ( net5 net9 0 ) nmos1v_3
+dev_nmos_8 ( net11 net13 net2 ) nmos1v_3
+dev_nmos_9 ( net7 net7 net6 ) nmos1v_3
+dev_pmos_11 ( net14 net14 vdd! ) pmos1v_3
+dev_pmos_12 ( net11 net14 vdd! ) pmos1v_3
+dev_pmos_14 ( net1 net14 vdd! ) pmos1v_3
+dev_pmos_15 ( 0 net4 net1 ) pmos1v_3
+dev_pmos_16 ( net4 net4 net14 ) pmos1v_3
+dev_pmos_17 ( 0 net4 net11 ) pmos1v_3

@@ -1,0 +1,19 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_16_b5dba615e40d/schematic
+C0 ( BIAS 0 ) capacitor
+C1 ( QB Vcm ) capacitor
+C2 ( Vcm Q ) capacitor
+C3 ( G1 CLKB ) capacitor
+C4 ( G2 CLK ) capacitor
+Ibias ( VDD BIAS ) isource
+L1 ( VDD QB ) inductor
+L2 ( VDD Q ) inductor
+M0 ( BIAS BIAS 0 ) nmos1v_3
+M1 ( TAIL1 G1 0 ) nmos1v_3
+M2 ( TAIL2 G2 0 ) nmos1v_3
+M3 ( Q QB TAIL1 ) nmos1v_3
+M4 ( QB Q TAIL1 ) nmos1v_3
+M5 ( QB QB TAIL2 ) nmos1v_3
+M6 ( Q Q TAIL2 ) nmos1v_3
+R0 ( BIAS G1 ) resistor
+R1 ( BIAS G2 ) resistor

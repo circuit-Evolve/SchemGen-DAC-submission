@@ -1,0 +1,30 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_31_23a37b05521e/schematic
+Cstage ( STAGE1 0 ) capacitor
+N0L ( A Vin_plus TAIL TAIL ) nmos1v
+N0R ( B Vin_minus TAIL TAIL ) nmos1v
+N2 ( NBIAS NBIAS VSS VSS ) nmos1v
+N4_bot ( QNmid QNtop VSS VSS ) nmos1v
+N4_top ( QNtop QRtop QNmid QNmid ) nmos1v
+N5 ( N56 QNtop VSS VSS ) nmos1v
+N6_bot ( OUT_LOW QNtop VSS VSS ) nmos1v
+N6_stage ( STAGE1 QRtop N56 N56 ) nmos1v
+N6_top ( VDD STAGE1 OUT_LOW OUT_LOW ) nmos1v
+N7 ( VDD OUT_HIGH Output Output ) nmos1v
+N8 ( BP8 BP8 NBIAS NBIAS ) nmos1v
+Ntail1 ( TAIL NBIAS VSS VSS ) nmos1v
+P3L_bot ( PBIAS A LPmid PBIAS ) pmos1v
+P3L_top ( LPmid PBIAS VDD LPmid ) pmos1v
+P3R_bot ( RRtop B RPmid RRtop ) pmos1v
+P3R_top ( RPmid RRtop VDD RPmid ) pmos1v
+P4_bot ( QRtop B QPmid QRtop ) pmos1v
+P4_top ( QPmid RRtop VDD QPmid ) pmos1v
+P5_bot ( STAGE1 A P5MID STAGE1 ) pmos1v
+P5_top ( P5MID PBIAS VDD P5MID ) pmos1v
+P6_bot ( VSS STAGE1 OUT_HIGH VSS ) pmos1v
+P6_top ( OUT_HIGH PBIAS VDD OUT_HIGH ) pmos1v
+P7 ( VSS OUT_LOW Output VSS ) pmos1v
+P8 ( BP8 BP8 VDD BP8 ) pmos1v
+RL ( PBIAS A ) resistor
+RQ ( QRtop QNtop ) resistor
+RR ( RRtop B ) resistor

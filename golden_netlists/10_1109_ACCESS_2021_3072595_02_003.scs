@@ -1,0 +1,19 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_81_bf06f2658862/schematic
+CC_L ( COMP_L VO1 ) capacitor
+CC_R ( COMP_R VOUTP ) capacitor
+MBN ( TAIL VBN VSS ) nmos1v_3
+MCN1 ( VO1 VCN N1 ) nmos1v_3
+MCN2 ( VO1B VCN N2 ) nmos1v_3
+MCP1 ( VO1 VCP PL ) pmos1v_3
+MCP2 ( VO1B VCP PR ) pmos1v_3
+MN1 ( N1 VINM TAIL ) nmos1v_3
+MN2 ( N2 VINP TAIL ) nmos1v_3
+MON1 ( VOUTM VBN VSS ) nmos1v_3
+MON2 ( VOUTP VBN VSS ) nmos1v_3
+MOP1 ( VOUTM VO1 VDD ) pmos1v_3
+MOP2 ( VOUTP VO1B VDD ) pmos1v_3
+MP1 ( PL VCNTCM VDD ) pmos1v_3
+MP2 ( PR VCNTCM VDD ) pmos1v_3
+RC_L ( VOUTM COMP_L ) resistor
+RC_R ( VO1B COMP_R ) resistor

@@ -1,0 +1,16 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_21_c4df955e802e/schematic
+Nbias1 ( NBIAS NBIAS 0 ) nmos1v_3
+Nbias2 ( PBIAS NBIAS 0 ) nmos1v_3
+Nmirror ( MIRROR MIRROR 0 ) nmos1v_3
+Nmirror_out ( STAGE1 MIRROR 0 ) nmos1v_3
+Nout ( OutAmp STAGE1 0 ) nmos1v_3
+Nref_lower ( Ref_Amp VDD 0 ) nmos1v_3
+Nref_upper ( REF_TOP REF_TOP Ref_Amp ) nmos1v_3
+Pbias1 ( NBIAS NBIAS VDD ) pmos1v_3
+Pbias2 ( PBIAS PBIAS VDD ) pmos1v_3
+Pin ( MIRROR Input TAIL ) pmos1v_3
+Pout ( OutAmp PBIAS VDD ) pmos1v_3
+Pref ( REF_TOP REF_TOP VDD ) pmos1v_3
+Pref_in ( STAGE1 Ref_Amp TAIL ) pmos1v_3
+Ptail ( TAIL PBIAS VDD ) pmos1v_3

@@ -1,0 +1,9 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1109_ACCESS_2021_3052153_04_001.json
+current_0_0 ( b a ) isource
+diode_3_1 ( a b ) diode
+diode_4_2 ( a b ) diode
+diode_5_3 ( a b ) diode
+resistor2_1_4 ( b a ) resistor
+resistor2_2_5 ( c b ) resistor

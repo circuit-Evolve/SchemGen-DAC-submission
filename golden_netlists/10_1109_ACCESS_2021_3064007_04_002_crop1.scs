@@ -1,0 +1,7 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=SchemGenLib_gpdk045/final_combined_matched_schematics_refined__10_1109_ACCESS_2021_3064007_04_002_crop1_final__9d4d682ba2/schematic
+LD1 ( VDD Vout- ) inductor
+LD2 ( VDD Vout+ ) inductor
+MD1 ( Vout- Vin+ 0 ) nmos1v_3
+MD2 ( Vout+ Vin- 0 ) nmos1v_3
+VDD_SRC ( VDD 0 ) vsource schemgen_role=synthetic_supply

@@ -1,0 +1,124 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p03_adaptive_ldo_complete
+// Original comments below describe the pre-conversion topology:
+// original: Manually traced from batch1/images/p03_adaptive_ldo_complete.png, 2026-10-01.
+// original: Topology-only golden netlist; not a native Cadence export or simulation deck.
+// original: MOS order D G S B; NPN order C B E. Current flows first pin to second.
+// original: All 24 MOS symbols have body pins. Open bodies are separate named nets;
+// original: they are not silently tied to source or a supply.
+// original: User confirmed the floating reference-stage bodies and NM5/PM12 gate tie.
+// original: User also confirmed the separate open bodies on PM7-PM12, M13, NM2-NM4,
+// original: M17 and M18. They intentionally remain floating, exactly as drawn.
+// original: Dashed red stage boxes and the drawing grid are not electrical wires.
+// original: Reference and startup block.
+// original: Error amplifier and adaptive tail-current bias.
+// original: Adaptive branch. FB is the output divider, NOT NM5's gate.
+// original: Pass transistor and output network.
+// original: I31 is the image's instance label on a resistor symbol, r=600; not a source.
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c17_f6a53893d9
+// View name: schematic
+RLOAD_I31 (VOUT 0) resistor r=1K
+R8 (VOUT ESR_NODE) resistor r=1K
+R6 (FB 0) resistor r=1K
+R7 (VOUT FB) resistor r=1K
+R5 (AD_LOW AD_GATE) resistor r=1K
+R4 (AD_BIAS PB) resistor r=1K
+R0 (COMP PASS_GATE) resistor r=1K
+R11 (VREF VREF_FILTER) resistor r=1K
+R1 (VREF BG_QREF) resistor r=1K
+R3 (BG_RS BG_QPAIR) resistor r=1K
+R2 (VDD PS6) resistor r=1K
+PM12 (VOUT PASS_GATE VDD BODY_PM12_OPEN) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M14 (AD_LOW AMP FB VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M13 (FB AD_BIAS VDD BODY_M13_OPEN) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM11 (PB PB VDD BODY_PM11_OPEN) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM8 (AMP DIFF_R VDD BODY_PM8_OPEN) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM9 (DIFF_R DIFF_L VDD BODY_PM9_OPEN) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM10 (DIFF_L DIFF_L VDD BODY_PM10_OPEN) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM7 (NB COMP VDD BODY_PM7_OPEN) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM5 (VREF BG_BIAS BG_PR BODY_PM2_PM5_FLOAT) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM4 (BG_ND BG_BIAS BG_TOP BODY_PM0_PM4_FLOAT) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM3 (BG_NBIAS BG_BIAS BG_PL VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM2 (BG_PR BG_TOP VDD BODY_PM2_PM5_FLOAT) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM0 (BG_TOP BG_TOP VDD BODY_PM0_PM4_FLOAT) g45p1svt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM1 (BG_PL BG_TOP VDD BODY_PM1_OPEN) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM6 (BG_BIAS BG_BIAS PS6 VDD) g45p1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M18 (FB AD_GATE 0 BODY_M18_OPEN) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+M17 (AD_LOW AD_GATE 0 BODY_M17_OPEN) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM4 (AMP NB 0 BODY_NM4_OPEN) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM5 (DIFF_R PASS_GATE TAIL 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM6 (DIFF_L VREF TAIL 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM2 (TAIL NB 0 BODY_NM2_OPEN) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM3 (NB NB 0 BODY_NM3_OPEN) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM0 (BG_ND BG_NBIAS BG_RS 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM1 (BG_NBIAS BG_NBIAS BG_QC 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+I39 (PB 0) isource dc=0 type=dc
+I8 (VDD NB) isource dc=0 type=dc
+I14 (BG_BIAS 0) isource dc=0 type=dc
+Q5 (BG_QREF BG_QREF 0 ) g45vnpn10 area=100.0 m=1
+Q2 (BG_QPAIR BG_QPAIR 0 ) g45vnpn10 area=100.0 m=1
+Q1 (BG_QPAIR BG_QPAIR 0 ) g45vnpn10 area=100.0 m=1
+Q3 (BG_QC BG_QC 0 ) g45vnpn10 area=100.0 m=1
+C3 (ESR_NODE 0) capacitor c=1p
+C11 (AD_GATE 0) capacitor c=1p
+C12 (AD_BIAS AD_LOW) capacitor c=1p
+C2 (VDD COMP) capacitor c=1p
+C1 (AMP 0) capacitor c=1p
+C0 (DIFF_R AMP) capacitor c=1p
+C8 (VREF_FILTER 0) capacitor c=1p

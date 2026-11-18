@@ -1,0 +1,11 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=SchemGenLib_gpdk045/004_CHOPPER_backup_remaining_to_inverter_20260902_202912_refined__10_1371_journal_pone_0313423_07_001_final__9c16b20eaf/schematic
+PM0 ( B e g ) pmos1v_3
+PM1 ( A b g ) pmos1v_3
+VDD_SRC ( VDD 0 ) vsource schemgen_role=synthetic_supply
+pmos_bulk_0 ( e Vb VDD ) pmos1v_3
+pmos_bulk_1 ( b Vb VDD ) pmos1v_3
+pmos_bulk_10 ( 0 g b ) pmos1v_3
+pmos_bulk_6 ( 0 A b ) pmos1v_3
+pmos_bulk_7 ( 0 g e ) pmos1v_3
+pmos_bulk_8 ( 0 B e ) pmos1v_3

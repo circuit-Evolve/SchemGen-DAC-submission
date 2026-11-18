@@ -1,0 +1,15 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1016_j_aeue_2023_154684_09_004.json
+inductor_4_0 ( VDD net1 ) inductor
+nmos_0_1 ( net1 RF+ net2 ) nmos1v_3
+nmos_1_2 ( net2 VG1 0 ) nmos1v_3
+nmos_3_3 ( net1 RF- net2 ) nmos1v_3
+pmos_2_4 ( IF- LO- net1 ) pmos1v_3
+pmos_5_5 ( IF+ LO+ net1 ) pmos1v_3
+resistor2_10_6 ( VG2 RF+ ) resistor
+resistor2_11_7 ( VLO LO+ ) resistor
+resistor2_6_8 ( VLO LO- ) resistor
+resistor2_7_9 ( 0 IF+ ) resistor
+resistor2_8_10 ( 0 IF- ) resistor
+resistor2_9_11 ( VG2 RF- ) resistor

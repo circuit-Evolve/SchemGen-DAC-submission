@@ -1,0 +1,16 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=SchemGenLib_gpdk045/final_combined_matched_schematics_refined__10_24425_ijet_2020_131876_02_002_final__02bed66c34/schematic
+CL ( Vout 0 ) capacitor
+M0 ( net6 VP net2 ) pmos1v_3
+M1 ( net5 net8 net2 ) pmos1v_3
+M10 ( net6 VB1 0 ) nmos1v_3
+M11 ( net5 VB1 0 ) nmos1v_3
+M2 ( net2 VB3 net1 ) pmos1v_3
+M3 ( net1 VB4 VDD ) pmos1v_3
+M4 ( net7 net3 VDD ) pmos1v_3
+M5 ( net4 net3 VDD ) pmos1v_3
+M6 ( net3 VB3 net7 ) pmos1v_3
+M7 ( Vout VB3 net4 ) pmos1v_3
+M8 ( net3 VB2 net6 ) nmos1v_3
+M9 ( Vout VB2 net5 ) nmos1v_3
+VDD_SRC ( VDD 0 ) vsource schemgen_role=synthetic_supply

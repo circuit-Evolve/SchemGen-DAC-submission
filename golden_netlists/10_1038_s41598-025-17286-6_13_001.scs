@@ -1,0 +1,20 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=AgnibhaRepair_20260924/repair_07_1921f0305d30/schematic
+C ( Out Vint ) capacitor
+M1 ( BIAS1 BIAS1 VDD ) pmos1v_3
+M10 ( Out Step_bar SWITCH_TOP ) pmos1v_3
+M11 ( SWITCH_TOP Step Out ) nmos1v_3
+M12 ( SWITCH_TOP G5_G12 RIGHT_TOP ) pmos1v_3
+M13 ( MIRROR_G MIRROR_G RIGHT_TOP ) pmos1v_3
+M14 ( RIGHT_TOP MIRROR_G VDD ) pmos1v_3
+M15 ( VDD Vbn RIGHT_BIAS ) nmos1v_3
+M16 ( VDD G16_G17 RIGHT_BIAS ) nmos1v_3
+M17 ( RIGHT_BIAS G16_G17 0 ) nmos1v_3
+M2 ( BIAS1 BIAS1 BIAS2 ) nmos1v_3
+M3 ( BIAS2 BIAS2 0 ) nmos1v_3
+M4 ( LEFT_TOP MIRROR_G VDD ) pmos1v_3
+M5 ( LEFT_BOTTOM G5_G12 LEFT_TOP ) pmos1v_3
+M6 ( LEFT_BOTTOM Vbn LEFT_TOP ) pmos1v_3
+M7 ( LEFT_BOTTOM Vcount N8 ) nmos1v_3
+M8 ( N8 N8 0 ) nmos1v_3
+M9 ( Out Iinit Vint ) nmos1v_3

@@ -1,0 +1,17 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=AgnibhaRepair_20260924/repair_08_69308c63d152/schematic
+C1 ( VIN RETURN ) capacitor
+C2 ( VOUT RETURN ) capacitor
+COSS1 ( VIN SWL ) capacitor
+COSS2 ( SWL RETURN ) capacitor
+COSS3 ( VOUT SWR ) capacitor
+COSS4 ( SWR RETURN ) capacitor
+D1 ( SWL VIN ) diode
+D2 ( RETURN SWL ) diode
+D3 ( SWR VOUT ) diode
+D4 ( RETURN SWR ) diode
+L ( SWL SWR ) inductor
+S1 ( VIN GH_L SWL ) nmos1v_3
+S2 ( SWL GL_L RETURN ) nmos1v_3
+S3 ( VOUT GH_R SWR ) nmos1v_3
+S4 ( SWR GL_R RETURN ) nmos1v_3

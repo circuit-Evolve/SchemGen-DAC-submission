@@ -1,0 +1,22 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1007_s10836-016-5599-8__06_001.json
+capacitor_8_0 ( e Vout2+ ) capacitor
+capacitor_9_1 ( Vout2- f ) capacitor
+nmos_2_2 ( Vout2+ Vout1- 0 ) nmos1v_3
+nmos_3_3 ( Vout1- Vbiasnp i ) nmos1v_3
+nmos_4_4 ( i Vcmfb1 0 ) nmos1v_3
+nmos_5_5 ( Vout2- Vout1+ 0 ) nmos1v_3
+nmos_6_6 ( d Vcmfb1 0 ) nmos1v_3
+nmos_7_7 ( Vout1+ Vbiasnp d ) nmos1v_3
+pmos_10_8 ( d Vin- k ) pmos1v_3
+pmos_11_9 ( Vout1+ Vbiasnp p ) pmos1v_3
+pmos_12_10 ( i Vin+ k ) pmos1v_3
+pmos_13_11 ( p Vsp VDD ) pmos1v_3
+pmos_14_12 ( Vout2- Vsp VDD ) pmos1v_3
+pmos_15_13 ( r Vsp VDD ) pmos1v_3
+pmos_16_14 ( Vout2+ Vsp VDD ) pmos1v_3
+pmos_17_15 ( Vout1- Vbiasnp r ) pmos1v_3
+pmos_18_16 ( k Vsp VDD ) pmos1v_3
+resistor2_0_17 ( Vout1- e ) resistor
+resistor2_1_18 ( Vout1+ f ) resistor

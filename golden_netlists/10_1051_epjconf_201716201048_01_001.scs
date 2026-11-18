@@ -1,0 +1,6 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1051_epjconf_201716201048_01_001.json
+current_0_0 ( VDD a ) isource
+nmos_1_1 ( Vout a 0 ) nmos1v_3
+nmos_2_2 ( a a 0 ) nmos1v_3

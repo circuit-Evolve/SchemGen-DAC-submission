@@ -1,0 +1,25 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_57_e6ca185b87d3/schematic
+CF3 ( NS2 VO ) capacitor
+MN1 ( P1 VB1 NS1 ) nmos1v_3
+MN10 ( NBIAS NBIAS 0 ) nmos1v_3
+MN11 ( VB0 RBIAS NBIAS ) nmos1v_3
+MN12 ( VB1 VB1 0 ) nmos1v_3
+MN13 ( VB2 NBIAS 0 ) nmos1v_3
+MN2 ( P2 VB1 NS2 ) nmos1v_3
+MN3 ( NS1 P1 0 ) nmos1v_3
+MN4 ( NS2 P1 0 ) nmos1v_3
+MN5 ( VO P2 0 ) nmos1v_3
+MN6 ( OUT_BIAS OUT_BIAS 0 ) nmos1v_3
+MN7 ( OUT OUT_BIAS 0 ) nmos1v_3
+MN8 ( VDD VO OUT ) nmos1v_3
+MN9 ( RBIAS NBIAS 0 ) nmos1v_3
+MP1 ( P1 VIN_minus TAIL ) pmos1v_3
+MP2 ( P2 OUT0 TAIL ) pmos1v_3
+MP3 ( TAIL VB0 VDD ) pmos1v_3
+MP4 ( VO VB0 VDD ) pmos1v_3
+MP5 ( OUT_BIAS VB0 VDD ) pmos1v_3
+MP6 ( VB0 VB0 VDD ) pmos1v_3
+MP7 ( VB1 VB0 VDD ) pmos1v_3
+MP8 ( VB2 VB2 VDD ) pmos1v_3
+R9 ( VDD RBIAS ) resistor

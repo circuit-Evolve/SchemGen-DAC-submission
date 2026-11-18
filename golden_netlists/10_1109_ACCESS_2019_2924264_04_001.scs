@@ -1,0 +1,13 @@
+simulator lang=spectre
+// Topology-only Spectre netlist generated from canonical JSON.
+// Canonical JSON is authoritative. Source record: 10_1109_ACCESS_2019_2924264_04_001.json
+capacitor_2_0 ( c d ) capacitor
+capacitor_3_1 ( a f ) capacitor
+capacitor_5_2 ( a b ) capacitor
+capacitor_7_3 ( net1 b ) vsource
+diode_8_4 ( c d ) diode
+diode_9_5 ( b a ) diode
+inductor_4_6 ( d net1 ) inductor
+inductor_6_7 ( f c ) inductor
+pmos_bulk_0_8 ( b e d ) pmos1v_3
+resistor2_1_9 ( a f ) resistor

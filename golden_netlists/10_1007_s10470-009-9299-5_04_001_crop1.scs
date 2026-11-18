@@ -1,0 +1,16 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GoldenRepair_20260924/repair_11_924352069097/schematic
+Cload ( VOUT 0 ) capacitor
+Ibias ( VDD BIAS ) isource
+Mbias ( BIAS BIAS 0 ) nmos1v_3
+Min_fb ( AMP FB TAIL ) nmos1v_3
+Min_ref ( MIRROR Vref TAIL ) nmos1v_3
+Mtail ( TAIL BIAS 0 ) nmos1v_3
+Ndriver ( DRIVE BIAS 0 ) nmos1v_3
+Pdriver ( DRIVE AMP VDD ) pmos1v_3
+Pmirror_out ( AMP MIRROR VDD ) pmos1v_3
+Pmirror_ref ( MIRROR MIRROR VDD ) pmos1v_3
+Ppass ( VOUT DRIVE VDD ) pmos1v_3
+R1 ( VOUT FB ) resistor
+R2 ( FB 0 ) resistor
+Rload ( VOUT 0 ) resistor

@@ -1,0 +1,14 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=GraphReworkLib/gc_f89f021fd4ad_ce112e31/schematic
+// Corrected 2026-10-22 from the image: the N2/N3 gate diagonals cross without a dot, so
+// nodes A (net7) and B (net17) are separate and N2/N3 are cross-coupled, not diode-connected.
+// Each tank inductor, varactor and N1/N4 now sits on its own node. The varactors stay
+// modelled as one diode each, as in the original (backup: ../Final-Locked-Dataset-SchemGen_backup_before_diagonal_fix/).
+dev_diode_1 ( net4 net7 ) diode
+dev_diode_10 ( net4 net17 ) diode
+dev_inductor_0 ( net7 net1 ) inductor
+dev_inductor_2 ( net17 net1 ) inductor
+dev_nmos_3 ( net7 net2 0 ) nmos1v_3
+dev_nmos_4 ( net7 net17 0 ) nmos1v_3
+dev_nmos_5 ( net17 net3 0 ) nmos1v_3
+dev_nmos_6 ( net17 net7 0 ) nmos1v_3

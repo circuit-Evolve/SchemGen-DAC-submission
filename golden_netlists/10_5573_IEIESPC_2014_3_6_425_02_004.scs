@@ -1,0 +1,6 @@
+// SchemGen Cadence OA topology netlist for GED only
+// SCHEMGEN_OA_TARGET=SchemGenLib_gpdk045/016_CHARGE_PUMP_backup_remaining_to_inverter_20260902_202912_refined__10_5573_IEIESPC_2014_3_6_425_02_004_final__37069bbe51/schematic
+V0 ( net2 0 ) vsource
+nmos_bulk_2 ( a b 0 ) nmos1v_3
+voltage_1 ( b 0 ) vsource
+voltage_3 ( a 0 ) vsource

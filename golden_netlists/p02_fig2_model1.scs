@@ -1,0 +1,41 @@
+// GPDK045 native Cadence adaptation; NOT a performance-matched paper reproduction.
+// Missing device sizes/values use recorded defaults; see plan.json and classification CSV.
+// Explicit body nets, including deliberately floating bodies, are preserved.
+// PDK_BULK_N/PDK_BULK_P, where present, require an external bulk bias.
+// Evidence: /projects/2022B4AA1300P/SchematicGeneration/Papers_dataset/consolidated_paper_dataset_final_locked/agnibha_mixed_pdk_20261008/cases/p02_fig2_model1
+// Original comments below describe the pre-conversion topology:
+// original: Image-traced topology reference. All MOS terminals explicitly D G S B.
+// original: PMOS bodies to VDD; NMOS bodies to ground (NOT the input-pair tail).
+// original: Visible values retained. Actual MOS model cards remain unspecified.
+// original: C1 label .001 mF equals 1 uF.
+simulator lang=spectre
+global 0
+include "/linuxeda_new/c2scadence/FOUNDRY/analog/45nm/models/spectre/gpdk045.scs" section=tt
+
+// Library name: AgnibhaMixedPDK_20261008
+// Cell name: c10_b5152145f1
+// View name: schematic
+M6 (VOUT LEFT VDD VDD) g45p2svt w=(320n) l=150n nf=1 as=48f ad=48f ps=940n \
+        pd=940n nrd=468.75m nrs=468.75m sa=150n sb=150n sd=200n \
+        sca=24.37763 scb=0.02712 scc=0.00086 m=(1)
+M2 (MIRROR MIRROR VDD VDD) g45p2svt w=(320n) l=150n nf=1 as=48f ad=48f \
+        ps=940n pd=940n nrd=468.75m nrs=468.75m sa=150n sb=150n sd=200n \
+        sca=24.37763 scb=0.02712 scc=0.00086 m=(1)
+M1 (LEFT MIRROR VDD VDD) g45p2svt w=(320n) l=150n nf=1 as=48f ad=48f \
+        ps=940n pd=940n nrd=468.75m nrs=468.75m sa=150n sb=150n sd=200n \
+        sca=24.37763 scb=0.02712 scc=0.00086 m=(1)
+M8 (TAIL VB 0 0) g45n2svt w=(320n) l=150n nf=1 as=48f ad=48f ps=940n \
+        pd=940n nrd=468.75m nrs=468.75m sa=150n sb=150n sd=200n \
+        sca=114.17432 scb=0.08203 scc=0.01268 m=(1)
+M4 (MIRROR FB TAIL 0) g45n2svt w=(320n) l=150n nf=1 as=48f ad=48f ps=940n \
+        pd=940n nrd=468.75m nrs=468.75m sa=150n sb=150n sd=200n \
+        sca=114.17432 scb=0.08203 scc=0.01268 m=(1)
+M3 (LEFT VREF TAIL 0) g45n2svt w=(320n) l=150n nf=1 as=48f ad=48f ps=940n \
+        pd=940n nrd=468.75m nrs=468.75m sa=150n sb=150n sd=200n \
+        sca=114.17432 scb=0.08203 scc=0.01268 m=(1)
+R2 (FB 0) resistor r=2k
+R1 (VOUT FB) resistor r=1k
+Vbias (VB 0) vsource dc=0.7 type=dc
+Vref (VREF 0) vsource dc=0.9 type=dc
+Vdd (VDD 0) vsource dc=1.8 type=dc
+C1 (VOUT 0) capacitor c=1u
