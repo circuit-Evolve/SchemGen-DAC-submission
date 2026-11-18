@@ -37,7 +37,7 @@ If the VLM edited a circuit, the file comes from its last accepted round. Otherw
 
 ## Opening the schematics
 
-The schematics (Xschem 3.4.8) use these symbols:
+The generated schematics and the 14 golden `.sch` files (Xschem 3.4.8) use these symbols:
 
 - **SkyWater SKY130 PDK** (`sky130_fd_pr/...`): install the PDK and the Xschem symbol libraries that come with it.
 - **Xschem `devices/`:** sources, supplies and pins, shipped with Xschem.
